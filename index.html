@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="smoke.css">
+    <title>smoke effect on Name</title>
+</head>
+<body>
+    <section>
+        <video src="smoke.mp4" autoplay muted ></video>
+        <h1>
+            <span>A</span>
+            <span>B</span>
+            <span>H</span>
+            <span>I</span>
+            <span>S</span>
+            <span>H</span>
+            <span>E</span>
+            <span>K</span>
+            <br>
+            <div id="projectText" style="display: none;">
+                <span>p</span>
+                <span>r</span>
+                <span>o</span>
+                <span>j</span>
+                <span>e</span>
+                <span>c</span>
+                <span>t</span>
+            </div>
+        </h1>
+        <button id="visitButton" class="btn" style="display: none;">Visit My Project</button>
+
+    </section>
+</body>
+<script>
+    // Function to handle the animation completion
+    function handleAnimationComplete() {
+        // Show the "Visit My Project" button after 5 seconds
+        setTimeout(function() {
+            const visitButton = document.getElementById('visitButton');
+            visitButton.style.display = 'block';
+            visitButton.classList.add('show');
+        }, 5000); // Delay for 5 seconds (5000 milliseconds)
+
+        // Show the "project" text after 3 seconds
+        setTimeout(function () {
+            const projectText = document.getElementById('projectText');
+            projectText.style.display = 'block';
+        }, 7000); // Delay for 3 seconds (3000 milliseconds)
+    }
+
+    // Call the function to handle animation completion
+    handleAnimationComplete();
+
+    // Add a click event listener to the "Visit My Project" button
+    const visitButton = document.getElementById('visitButton');
+    visitButton.addEventListener('click', function() {
+        // Replace the URL below with the URL of your project
+        window.location.href = 'https://todo2-wt5n.onrender.com';
+    });
+
+    // Check if the screen width is less than a certain threshold (for mobile devices)
+    if (window.innerWidth <= 768) { // Adjust the threshold as needed
+        // Get the video element
+        const smokeVideo = document.getElementById('smokeVideo');
+
+        // Delay the video playback by 10 seconds
+        setTimeout(function() {
+            smokeVideo.play();
+        }, 100000); // Delay for 10 seconds (10000 milliseconds)
+    }
+</script>
+
+
+
+
+</html>
